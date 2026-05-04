@@ -1,112 +1,112 @@
-# Hermes Operante Skills 🧠⚡
+# Hermes VEX Skills 🧠⚡
 
-> Colección de skills forjadas por **Marco Torres Y.** — [Axis Dynamics](https://axisdynamics.cl)
-> en colaboración con **Hermes VEX**. Optimización de contexto,
-> automatización post-update, y más.
+> A collection of skills forged by **Marco Torres Y.** — [Axis Dynamics](https://axisdynamics.cl)
+> in collaboration with **Hermes VEX**. Context optimization, post-update
+> automation, and more.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-v0.11.0%2B-blue)](https://github.com/NousResearch/hermes-agent)
 
 ---
 
-## ¿Qué es esto?
+## What is this?
 
-Skills utilitarias para [Hermes Agent](https://github.com/NousResearch/hermes-agent)
-que resuelven problemas reales del día a día operando agentes de IA. Cada skill
-es independiente y se puede instalar por separado.
-
----
-
-## Skills Disponibles
-
-| Skill | Versión | Propósito | Una línea |
-|-------|---------|-----------|-----------|
-| [hermes-context-guardian](hermes-context-guardian/) | v1.1.0 | 🛡️ Bootstrap + post-update | Setup + supervivencia. Autosuficiente — no requiere pruning. |
-| [hermes-context-pruning](hermes-context-pruning/) | v1.0.0 | ✂️ Referencia | Diagnóstico detallado + poda manual. Opcional — el guardian ya cubre todo. |
+Utility skills for [Hermes Agent](https://github.com/NousResearch/hermes-agent)
+that solve real day-to-day problems when operating AI agents. Each skill is
+independent and can be installed separately.
 
 ---
 
-## Instalación
+## Available Skills
 
-Cada skill se instala de forma independiente:
+| Skill | Version | Purpose | TL;DR |
+|-------|---------|---------|-------|
+| [hermes-context-guardian](hermes-context-guardian/) | v1.1.0 | 🛡️ Bootstrap + post-update | Self-sufficient setup & survival. No pruning skill required. |
+| [hermes-context-pruning](hermes-context-pruning/) | v1.0.0 | ✂️ Reference | Detailed audit + manual prune. Optional — guardian handles it all. |
+
+---
+
+## Installation
+
+Each skill installs independently:
 
 ```bash
-# Desde el repo (recomendado)
-hermes skills install https://raw.githubusercontent.com/plaxius/hermes-skills/main/hermes-context-guardian/SKILL.md
+# From the repo (recommended)
+hermes skills install https://raw.githubusercontent.com/axisdynamics/hermes/main/hermes-context-guardian/SKILL.md
 
-# O clona todo y enlaza
-git clone https://github.com/plaxius/hermes-skills.git
-hermes skills install ./hermes-skills/hermes-context-guardian/SKILL.md
+# Or clone everything and link
+git clone https://github.com/axisdynamics/hermes.git
+hermes skills install ./hermes/hermes-context-guardian/SKILL.md
 ```
 
 ---
 
-## Flujo Recomendado
+## Recommended Flow
 
 ```
 ┌──────────────────────────────────┐
-│ 1. ./guardian.sh --bootstrap     │  Una sola vez. Crea el índice,
-│    (first-time setup)            │  renombra AGENTS.md, configura todo.
+│ 1. ./guardian.sh --bootstrap     │  Once. Creates the index,
+│    (first-time setup)            │  renames AGENTS.md, configures everything.
 └───────────────┬──────────────────┘
                 │
                 ▼
 ┌──────────────────────────────────┐
-│ 2. ./guardian.sh                 │  Después de cada hermes update.
-│    (post-update recurrente)      │  Sobrevive. Verifica. Repara.
+│ 2. ./guardian.sh                 │  After every hermes update.
+│    (recurring post-update)       │  Survives. Verifies. Repairs.
 └──────────────────────────────────┘
 ```
 
-**El guardian es autosuficiente** — no requiere `hermes-context-pruning`.
-El pruning queda como referencia para quienes quieran entender el diagnóstico
-completo o personalizar su índice manualmente.
+**The guardian is self-sufficient** — it doesn't need `hermes-context-pruning`.
+Pruning remains as a reference for those who want to understand the full
+diagnostic or customize their index manually.
 
 ---
 
-## ¿Por qué existen estas skills?
+## Why These Skills Exist
 
-**El problema**: Hermes v0.11.0 tiene un mecanismo "Subdirectory context
-discovered" que inyecta el `AGENTS.md` completo (~35KB / 8,700 tokens) al
-contexto de cada sesión cuando cualquier herramienta lo toca — incluso con
+**The problem**: Hermes v0.11.0 has a "Subdirectory context discovered"
+mechanism that injects the full `AGENTS.md` (~35KB / 8,700 tokens) into
+every session's context whenever any tool touches the file — even with
 `skip_context_files: true`.
 
-**La solución**: Podar a un índice slim de ~470 tokens y renombrar el
-archivo para evadir el detector. El guardian automatiza la supervivencia
-frente a `hermes update`.
+**The solution**: Prune to a slim index of ~470 tokens and rename the
+file to evade the detector. The guardian automates survival across
+`hermes update` cycles.
 
-| Sin skills | Con skills |
-|------------|------------|
-| 8,700 tok por sesión | 470 tok por sesión |
-| 94.6% más contexto | **94.6% ahorrado** |
+| Without skills | With skills |
+|----------------|-------------|
+| 8,700 tok per session | 470 tok per session |
+| 94.6% more context | **94.6% saved** |
 
 ---
 
-## Contribuir
+## Contributing
 
-¿Tienes una skill que resuelve un dolor real operando Hermes? PRs bienvenidos.
+Got a skill that solves a real pain point operating Hermes? PRs welcome.
 
-Estructura de una skill en este repo:
+Skill structure in this repo:
 
 ```
 hermes-skills/
-├── mi-skill/
-│   ├── SKILL.md         # El skill (formato Hermes, obligatorio)
-│   ├── README.md        # Documentación humana
-│   ├── install.sh       # Script de instalación (opcional)
-│   └── ...              # Scripts auxiliares
-└── README.md            # Este archivo
+├── my-skill/
+│   ├── SKILL.md         # The skill (Hermes format, required)
+│   ├── README.md        # Human-readable docs
+│   ├── install.sh       # Install script (optional)
+│   └── ...              # Helper scripts
+└── README.md            # This file
 ```
 
 ---
 
-## Autores
+## Authors
 
-Forjado por **Marco Torres Y.** — [Axis Dynamics](https://axisdynamics.cl)
-en colaboración con **Hermes VEX**.
+Forged by **Marco Torres Y.** — [Axis Dynamics](https://axisdynamics.cl)
+in collaboration with **Hermes VEX**.
 
-Parte del ecosistema Memovex / VEX / Hermes.
+Part of the Memovex / VEX / Hermes ecosystem.
 
 ---
 
-## Licencia
+## License
 
-MIT — usa, modifica, comparte. Solo mantén la atribución.
+MIT — use it, modify it, share it. Just keep the attribution.
