@@ -1,5 +1,5 @@
 ---
-name: vex-hermes-integration
+name: AI-Cyber-Range
 description: Use when integrating axisdynamics/ai_cyber_range_project with Hermes/VEX. Recreates the safe local bridge that adds a stdlib VEX client, CyberRangeConfig.vex settings, CLI commands, post-run telemetry publishing, defensive task handoff, tests, docs, and verification without expanding cyber-range scope or external targets.
 version: 1.1.0
 author: Marco Torres Y. / AxisDynamics + Hermes VEX
@@ -412,5 +412,5 @@ Before pushing the cyber range integration or this skill to GitHub:
 From AxisDynamics skills repo:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/axisdynamics/hermes-skills/main/vex-hermes-integration/SKILL.md
+hermes skills install https://raw.githubusercontent.com/axisdynamics/hermes-skills/main/AI-Cyber-Range/SKILL.md
 ```

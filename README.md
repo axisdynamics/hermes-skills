@@ -23,7 +23,7 @@ independent and can be installed separately.
 |-------|---------|---------|-------|
 | [hermes-context-guardian](hermes-context-guardian/) | v1.1.0 | 🛡️ Bootstrap + post-update | Self-sufficient setup & survival. No pruning skill required. |
 | [hermes-context-pruning](hermes-context-pruning/) | v1.0.0 | ✂️ Reference | Detailed audit + manual prune. Optional — guardian handles it all. |
-| [vex-hermes-integration](vex-hermes-integration/) | v1.1.0 | 🌌 AI Cyber Range → VEX | Recreate the safe `axisdynamics/ai_cyber_range_project` bridge: VEX telemetry, CLI status/publish, defensive handoff, tests, and verification. |
+| [AI-Cyber-Range](AI-Cyber-Range/) | v1.1.0 | 🌌 AI Cyber Range → VEX | Recreate the safe `axisdynamics/ai_cyber_range_project` bridge: VEX telemetry, CLI status/publish, defensive handoff, tests, and verification. |
 
 ---
 
