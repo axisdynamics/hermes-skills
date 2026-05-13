@@ -23,6 +23,7 @@ independent and can be installed separately.
 |-------|---------|---------|-------|
 | [hermes-context-guardian](hermes-context-guardian/) | v1.1.0 | 🛡️ Bootstrap + post-update | Self-sufficient setup & survival. No pruning skill required. |
 | [hermes-context-pruning](hermes-context-pruning/) | v1.0.0 | ✂️ Reference | Detailed audit + manual prune. Optional — guardian handles it all. |
+| [vex-hermes-integration](vex-hermes-integration/) | v1.0.0 | 🌌 VEX/Hermes bridge | Safe app/node integration with VEX-style message buses, telemetry, CLI smoke tests, and defensive handoff. |
 
 ---
 
@@ -32,11 +33,11 @@ Each skill installs independently:
 
 ```bash
 # From the repo (recommended)
-hermes skills install https://raw.githubusercontent.com/axisdynamics/hermes/main/hermes-context-guardian/SKILL.md
+hermes skills install https://raw.githubusercontent.com/axisdynamics/hermes-skills/main/hermes-context-guardian/SKILL.md
 
 # Or clone everything and link
-git clone https://github.com/axisdynamics/hermes.git
-hermes skills install ./hermes/hermes-context-guardian/SKILL.md
+git clone https://github.com/axisdynamics/hermes-skills.git
+hermes skills install ./hermes-skills/hermes-context-guardian/SKILL.md
 ```
 
 ---
